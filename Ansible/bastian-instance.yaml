@@ -16,6 +16,7 @@
       with_items:
         - boto3
         - botocore
+
     - name: Create vprofile ec2 key
       ec2_key:
         name: vprofile-key
