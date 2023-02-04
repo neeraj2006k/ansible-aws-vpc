@@ -5,6 +5,13 @@
     - name: Import VPC Variables
       include_vars: vars/vpc_setup
 
+    - name: Ensure boto and boto3 modules are installed
+      pip:
+        name: "{{ item }}"
+      with_items:
+        - boto3
+        - botocore
+
     - name: Create vprofile VPC
       ec2_vpc_net:
         name: "{{vpc_name}}"
